@@ -39,14 +39,18 @@ const manifest = {
         {
             plugin: 'hapi-auth-cookie'
         },
-        {
-            plugin: {
-                register: 'crumb',
-                options: {
-                    restful: true
-                }
-            }
-        },
+        // Remove crumb due to prevent
+        // Forbidden 403 on all API calls
+        //
+        // See: https://github.com/jedireza/aqua/issues/199
+        // {
+        //     plugin: {
+        //         register: 'crumb',
+        //         options: {
+        //             restful: true
+        //         }
+        //     }
+        // },
         {
             plugin: 'vision'
         },
